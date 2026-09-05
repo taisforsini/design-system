@@ -9,6 +9,7 @@
 .form-ds-title {
   font-size: var(--font-size-title);
   font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-base);
   color: var(--color-text);
   margin: 0;
 }
