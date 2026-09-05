@@ -20,7 +20,6 @@ const FormularioDS = () => {
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
-    console.log("ok");
     e.preventDefault();
     if (!email.includes("@")) {
       setEmailErrorMessage("E-mail inválido");
