@@ -28,7 +28,7 @@
 
 .custom-input-field {
   padding: 8px 12px;
-  font-size: 15px;
+  font-size: 16px;
   border: 1px solid #cccccc;
   border-radius: 4px;
   color: #0f172a;
@@ -51,7 +51,7 @@
 
 .custom-select {
   padding: 8px 12px;
-  font-size: 15px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   border: 1px solid #cccccc;
   border-radius: 4px;
@@ -68,9 +68,43 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 
 .custom-checkbox label {
-  font-size: 15px;
+  font-size: 16px;
   color: #0f172a;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+.button-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: #64748b;
+  border-color: #cccccc;
+}
+.button-secondary:hover {
+  background-color: #475569;
+  color: #ffffff;
 }

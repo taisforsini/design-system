@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./FormularioPuro.css";
 
 const FormularioPuro = () => {
@@ -15,8 +15,18 @@ const FormularioPuro = () => {
     { value: "logistica", label: "Logística" },
   ];
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.includes("@")) {
+      setEmailErrorMessage("E-mail inválido");
+      return;
+    }
+    setEmailErrorMessage("");
+    alert(`Cadastro enviado: ${name}, ${email}, ${team}`);
+  };
+
   return (
-    <form className="form-wrapper">
+    <form className="form-wrapper" onSubmit={handleSubmit}>
       <h1 className="form-title">Formulário de cadastro sem Design System</h1>
 
       <div className="custom-input">
@@ -77,6 +87,15 @@ const FormularioPuro = () => {
           onChange={(e) => setTermsAndConditionsChecked(e.target.checked)}
         />
         <label>Aceito os termos e condições</label>
+      </div>
+
+      <div className="form-buttons">
+        <button type="submit" className="button button-primary">
+          Enviar
+        </button>
+        <button type="button" className="button button-secondary">
+          Cancelar
+        </button>
       </div>
     </form>
   );
