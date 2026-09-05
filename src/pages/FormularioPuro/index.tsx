@@ -5,6 +5,15 @@ const FormularioPuro = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [emailErrorMessage, setEmailErrorMessage] = useState<string>("");
+  const [team, setTeam] = useState<string>("");
+  const [termsAndConditionsChecked, setTermsAndConditionsChecked] =
+    useState<boolean>(false);
+
+  const teams = [
+    { value: "marketing", label: "Marketing" },
+    { value: "ti", label: "Tecnologia da Informação" },
+    { value: "logistica", label: "Logística" },
+  ];
 
   return (
     <form className="form-wrapper">
@@ -39,6 +48,35 @@ const FormularioPuro = () => {
         {emailErrorMessage && (
           <span className="custom-error-text">{emailErrorMessage}</span>
         )}
+      </div>
+
+      <div className="custom-input">
+        <label className="custom-input">Equipe</label>
+        <select
+          id="team"
+          className="custom-select"
+          value={team}
+          onChange={(e) => setTeam(e.target.value)}
+        >
+          <option value="" disabled>
+            Selecione uma equipe
+          </option>
+          {teams.map((team) => (
+            <option key={team.value} value={team.value}>
+              {team.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="custom-checkbox">
+        <input
+          id="terms"
+          type="checkbox"
+          checked={termsAndConditionsChecked}
+          onChange={(e) => setTermsAndConditionsChecked(e.target.checked)}
+        />
+        <label>Aceito os termos e condições</label>
       </div>
     </form>
   );
