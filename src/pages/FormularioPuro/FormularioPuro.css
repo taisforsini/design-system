@@ -39,3 +39,13 @@
   border-color: #2563eb;
   box-shadow: 0 0 0 3px #93c5fd;
 }
+
+.custom-input-field--error {
+  border-color: #dc2626;
+}
+
+.custom-input-error-text {
+  font-size: 14px;
+  color: #dc2626;
+}
+
