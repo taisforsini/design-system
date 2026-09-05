@@ -16,10 +16,10 @@ export default function Comparison() {
           marginTop: 24,
         }}
       >
-        <Button variant="secondary" onClick={() => setVersao("pura")}>
+        <Button variant={versao === "pura" ? "primary" : "secondary"} onClick={() => setVersao("pura")} >
           Versão sem design system
         </Button>
-        <Button variant="secondary" onClick={() => setVersao("ds")}>
+        <Button variant={versao === "ds" ? "primary" : "secondary"} onClick={() => setVersao("ds")}>
           Versão com Design System
         </Button>
       </div>
