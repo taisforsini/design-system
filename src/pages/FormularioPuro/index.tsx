@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, type FormEvent } from "react";
 import "./FormularioPuro.css";
 
 const FormularioPuro = () => {
@@ -15,7 +15,7 @@ const FormularioPuro = () => {
     { value: "logistica", label: "Logística" },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!email.includes("@")) {
       setEmailErrorMessage("E-mail inválido");
@@ -26,11 +26,13 @@ const FormularioPuro = () => {
   };
 
   return (
-    <form className="form-wrapper" onSubmit={handleSubmit}>
+    <form className="form-wrapper" onSubmit={handleSubmit} noValidate>
       <h1 className="form-title">Formulário de cadastro sem Design System</h1>
 
       <div className="custom-input">
-        <label className="custom-input-label">Nome completo</label>
+        <label className="custom-input-label" htmlFor="nome">
+          Nome completo
+        </label>
         <input
           id="nome"
           className="custom-input-field"
@@ -42,12 +44,14 @@ const FormularioPuro = () => {
       </div>
 
       <div className="custom-input">
-        <label className="custom-input-label">Email</label>
+        <label className="custom-input-label" htmlFor="email">
+          Email
+        </label>
         <input
           id="email"
           className={
             emailErrorMessage
-              ? "custom-input custom-input-error"
+              ? "custom-input-field custom-input-field--error"
               : "custom-input-field"
           }
           type="email"
@@ -56,12 +60,14 @@ const FormularioPuro = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         {emailErrorMessage && (
-          <span className="custom-error-text">{emailErrorMessage}</span>
+          <span className="custom-input-error-text">{emailErrorMessage}</span>
         )}
       </div>
 
       <div className="custom-input">
-        <label className="custom-input">Equipe</label>
+        <label className="custom-input-label" htmlFor="team">
+          Equipe
+        </label>
         <select
           id="team"
           className="custom-select"
@@ -86,7 +92,7 @@ const FormularioPuro = () => {
           checked={termsAndConditionsChecked}
           onChange={(e) => setTermsAndConditionsChecked(e.target.checked)}
         />
-        <label>Aceito os termos e condições</label>
+        <label htmlFor="terms">Aceito os termos e condições</label>
       </div>
 
       <div className="form-buttons">
