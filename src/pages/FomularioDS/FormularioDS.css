@@ -1,0 +1,19 @@
+.form-ds {
+  max-width: 420px;
+  margin: var(--space-6) auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-ds-title {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.form-ds-btns {
+  display: flex;
+  gap: var(--space-2);
+}

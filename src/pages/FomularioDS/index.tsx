@@ -3,6 +3,7 @@ import { Input } from "../../components/Input/Input";
 import { Checkbox } from "../../components/Checkbox/Checkbox";
 import { Button } from "../../components/Button/Button";
 import { Select } from "../../components/Select/Select";
+import "./FormularioDS.css";
 
 const FormularioDS = () => {
   const [name, setName] = useState<string>("");
@@ -30,8 +31,10 @@ const FormularioDS = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Formulário de cadastro com Design System</h1>
+    <form onSubmit={handleSubmit} className="form-ds">
+      <h1 className="form-ds-title">
+        Formulário de cadastro com Design System
+      </h1>
       <Input
         label="Nome completo"
         placeholder="Digite seu nome"
@@ -59,7 +62,7 @@ const FormularioDS = () => {
         options={teams}
       />
 
-      <div style={{ display: "flex", gap: 8 }}>
+      <div className="form-ds-btns">
         <Button type="submit" variant="primary">
           Enviar
         </Button>
