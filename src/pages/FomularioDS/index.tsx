@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Input } from "../../components/Input/Input";
+import { Checkbox } from "../../components/Checkbox/Checkbox";
 
 const FormularioDS = () => {
-  const [name, setName] = useState<string>();
-  const [email, setEmail] = useState<string>();
-  const [emailErrorMessage, setEmailErrorMessage] = useState<string>();
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [emailErrorMessage, setEmailErrorMessage] = useState<string>("");
+  const [termsAndConditionsChecked, setTermsAndConditionsChecked] =
+    useState<boolean>(false);
 
   return (
     <form>
@@ -21,6 +24,11 @@ const FormularioDS = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         errorMessage={emailErrorMessage}
+      />
+      <Checkbox
+        label="Aceito os termos"
+        checked={termsAndConditionsChecked}
+        onChange={(e) => setTermsAndConditionsChecked(e.target.checked)}
       />
     </form>
   );
