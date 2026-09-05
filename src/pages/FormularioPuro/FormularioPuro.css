@@ -1,0 +1,41 @@
+.form-wrapper {
+  max-width: 420px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0f172a;
+  margin: 0;
+}
+
+.custom-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.custom-input-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+.custom-input-field {
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #0f172a;
+}
+
+.custom-input-field:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #93c5fd;
+}
