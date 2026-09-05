@@ -47,18 +47,17 @@ const FormularioDS = () => {
         onChange={(e) => setEmail(e.target.value)}
         errorMessage={emailErrorMessage}
       />
-      <Checkbox
-        label="Aceito os termos"
-        checked={termsAndConditionsChecked}
-        onChange={(e) => setTermsAndConditionsChecked(e.target.checked)}
-      />
-
       <Select
         label="Equipe"
         placeholder="Selecione uma equipe"
         value={team}
         onChange={(e) => setTeam(e.target.value)}
         options={teams}
+      />
+      <Checkbox
+        label="Aceito os termos e condições"
+        checked={termsAndConditionsChecked}
+        onChange={(e) => setTermsAndConditionsChecked(e.target.checked)}
       />
 
       <div className="form-ds-btns">
