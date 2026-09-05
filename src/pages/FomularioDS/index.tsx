@@ -20,8 +20,8 @@ const FormularioDS = () => {
         placeholder="email@exemplo.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        errorMessage={emailErrorMessage}
       />
-      errorMessage={emailErrorMessage}
     </form>
   );
 };
